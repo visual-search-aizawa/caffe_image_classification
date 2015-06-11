@@ -25,7 +25,7 @@ def build(exp):
 	root = "data/"
 	exp(source=[],
 		target=["resized_images"],
-		parameters=[{"resize_size":224}],
+		parameters=[{"resize_size":40}],
 		rule=resize_images(root=root))
 
 	exp(source=["resized_images"],
@@ -36,7 +36,7 @@ def build(exp):
 	    target=["train.txt", "test.txt"],
 	    parameters=[{"train_ratio":.5}],
 	    rule=simple_split_dataset(seed=109100))
-t
+
 	exp(source=["train.txt"],
 		target="train_db",
 		rule='GLOG_logtostderr=1 convert_imageset.bin -backend leveldb / ${SRC[0].abspath()} ${TGT}')
@@ -58,7 +58,7 @@ t
 	exp(source='train_and_test.prototxt',
 	            target='solver.prototxt',
 	            parameters=maflib.util.product({
-	                'base_lr': [0.00001],
+	                'base_lr': [0.0001],
 	                'momentum': [0.9],
 	                'weight_decay': [0.004],
 	                'lr_policy': ["fixed"],
