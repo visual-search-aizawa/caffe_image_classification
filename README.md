@@ -20,10 +20,12 @@ $ caffe.bin
 - train_val.prototxt
 - data
 	- 空ディレクトリ
+	
 ## 自分のデータを分類する
 1. data以下に，クラスごとに分けた画像たちを入れる
 2. train_val.prototxtの最終層のnum_outputというパラメータを分類クラス数に合わせて変える
 3. wscriptの以下の部分を変更する
+
 | 箇所      |     説明 |  
 | :--------:| :--------:| 
 | ３つめのexp，train_ratio   | データの内学習に使うデータの割合（デフォ0.5) |  
