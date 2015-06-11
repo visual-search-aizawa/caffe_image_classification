@@ -28,6 +28,7 @@ $ caffe.bin
 
 | 箇所      |     説明 |  
 | :--------:| :--------:| 
+|1つめのexp，resize_size|入力画像を揃える大きさ|
 | ３つめのexp，train_ratio   | データの内学習に使うデータの割合（デフォ0.5) |  
 |7つ目のexp, train_batchsize, test_batch_size|学習テストそれぞれのミニバッチサイズ|
 |8つめのexpの各パラメータ|base_lrが学習率．詳しくはhttp://caffe.berkeleyvision.org/tutorial/solver.html|
