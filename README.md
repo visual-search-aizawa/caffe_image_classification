@@ -1,0 +1,2 @@
+# caffe_image_classification
+Caffeお手軽画像分類スクリプト
